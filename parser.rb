@@ -83,7 +83,7 @@ end
 
 # Output Results
 printf("all: %u %7u %7u %s\n", line_count, all_word_count, all_byte_count, ARGV[0])
-printf("proper: %u %7u %7u %s\n", line_count, proper_word_count, proper_byte_count, ARGV[0])
+printf("proper: %u %7u %7u\n", line_count, proper_word_count, proper_byte_count)
 puts "Total Articles: #{article_count}"
 puts "Total Sections: #{section_count}"
 puts "Total Sections per Article:"
