@@ -54,36 +54,42 @@ current_section = 0
 File.foreach(ARGV[0]) do |line|
 	line_count += 1
 	heading = false
+	word_count = num_words(line)
 
 	# Handle article and section headings
 	if !!line.match(pattern_article)
 		heading = true
 		article_count += 1
 		current_section = 0
-		
+
 		if !article_sections.has_key?(article_count)
-			article_sections[article_count] = 0
+			article_sections[article_count] = 1
+			section_count += 1
 		end
 	elsif !!line.match(pattern_section)
 		heading = true
-		section_count += 1
-		current_section += 1
-		article_sections[article_count] += 1
+		unless current_section == 0
+			section_count += 1
+			current_section += 1
+			article_sections[article_count] += 1
+		else
+			current_section = 1
+		end
 	end
 	
 	# all
 	all_byte_count += line.length 			# Pre-calculated string length
-	all_word_count += num_words(line)
+	all_word_count += word_count
 
 	# proper
 	line.gsub!(pattern, '') unless heading
 	proper_byte_count += line.length
-	proper_word_count += num_words(line)
+	proper_word_count += heading ? word_count : num_words(line)
 end
 
 # Output Results
 printf("all: %u %7u %7u %s\n", line_count, all_word_count, all_byte_count, ARGV[0])
-printf("proper: %u %7u %7u %s\n", line_count, proper_word_count, proper_byte_count, ARGV[0])
+printf("proper: %u %7u %7u\n", line_count, proper_word_count, proper_byte_count)
 puts "Total Articles: #{article_count}"
 puts "Total Sections: #{section_count}"
 puts "Total Sections per Article:"
