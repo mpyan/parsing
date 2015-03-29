@@ -54,6 +54,7 @@ current_section = 0
 File.foreach(ARGV[0]) do |line|
 	line_count += 1
 	heading = false
+	word_count = num_words(line)
 
 	# Handle article and section headings
 	if !!line.match(pattern_article)
@@ -73,12 +74,12 @@ File.foreach(ARGV[0]) do |line|
 	
 	# all
 	all_byte_count += line.length 			# Pre-calculated string length
-	all_word_count += num_words(line)
+	all_word_count += word_count
 
 	# proper
 	line.gsub!(pattern, '') unless heading
 	proper_byte_count += line.length
-	proper_word_count += num_words(line)
+	proper_word_count += heading ? word_count : num_words(line)
 end
 
 # Output Results
