@@ -5,7 +5,8 @@
 # where a "section" is defined as a block of text
 # following a "Section" heading
 #
-# The following words (case-sensitive) are ignored:
+# For the "proper" part of the output,
+# the following words (case-sensitive) are ignored:
 # * "I", "We", "You", "They"
 # * "a", "and", "the", "that"
 # * "of", "for", "with"
