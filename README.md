@@ -8,15 +8,15 @@ $ ruby parser.rb constitution.txt
 all: 872    7652   45119 constitution.txt
 proper: 872    6030   40737
 Total Articles: 7
-Total Sections: 21
+Total Sections: 24
 Total Sections per Article:
     Article 1: 10
     Article 2: 4
     Article 3: 3
     Article 4: 4
-    Article 5: 0
-    Article 6: 0
-    Article 7: 0
+    Article 5: 1
+    Article 6: 1
+    Article 7: 1
 ```
 The `all` line lists the total number of lines, words, and charaters in the document.  
 The `proper` line lists the same information as the `all` line, but ignoring the following list of words (case-sensitive):
