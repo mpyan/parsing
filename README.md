@@ -32,5 +32,6 @@ The `Total Sections` line lists the total number of **Sections** found in the fi
 
 
 _**Note:** By the above definition of a "Section", Articles consisting solely of a block of text **without** "Section" headers are considered as having **ONE "Section"**._
+- The main, primary version of this parser script that considers Articles without "Section" headers as having **zero** sections is available on the [master branch](https://github.com/mpyan/parsing).
 
 The `Total Sections per Article` line lists the total number of **Sections** found in each Article, using the definitions of "Article" and "Section" outlined above.
