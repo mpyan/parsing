@@ -31,6 +31,6 @@ The `Total Articles` line lists the total number of **Articles** found in the fi
 The `Total Sections` line lists the total number of **Sections** found in the file, where a "Section" is defined as a block of text with a line heading in the format "Section *N*" where *N* is the section number.
 
 
-_**Note:** By the above definition of a "Section", Articles consisting solely of a block of text **without** "Section" headers are considered as having **zero "sections"**, as these blocks of text have not been labeled as "Sections"._
+_**Note:** By the above definition of a "Section", Articles consisting solely of a block of text **without** "Section" headers are considered as having **ZERO "Sections"**, as these blocks of text have not been labeled as "Sections"._
 
 The `Total Sections per Article` line lists the total number of **Sections** found in each Article, using the definitions of "Article" and "Section" outlined above.
